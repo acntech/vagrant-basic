@@ -34,6 +34,7 @@ Created with Vagrant 2.2.1 and VirtualBox 5.2.22.
   * ```sudo sh /media/cdrom/VBoxLinuxAdditions.run```
 * Disabled automatic updates:
   * ```sudo wget --no-check-certificate https://raw.githubusercontent.com/acntech/vagrant-xubuntu/develop/files/10periodic -O /etc/apt/apt.conf.d/10periodic```
+  * ```sudo wget --no-check-certificate https://raw.githubusercontent.com/acntech/vagrant-xubuntu/develop/files/20auto-upgrades -O /etc/apt/apt.conf.d/20auto-upgrades```
 * Created vagrant folder:
   * ```sudo mkdir /vagrant```
   * ```sudo chown -R vagrant:vagrant /vagrant```

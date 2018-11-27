@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo cat /var/acntech/files/10periodic > /etc/apt/apt.conf.d/10periodic
+sudo cat /var/acntech/files/20auto-upgrades > /etc/apt/apt.conf.d/20auto-upgrades
 
 for pid in $( pidof apt-get ); do
    sudo kill -9 ${pid}
