@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+  # Name of Vagrant Box
+  config.vm.box = "acntech/xubuntu"
+
+  # Don't generate new SSH key, but use the default insecure key
+  config.ssh.insert_key = false
+
+  # VirtualBox provider
+  config.vm.provider "virtualbox" do |vb|
+    # Name to display in Virtualbox
+    vb.name = "AcnTech Xubuntu"
+
+    # Display the VirtualBox GUI when booting the machine
+    vb.gui = true
+
+    # Customize CPU count
+    vb.cpus = "1"
+
+    # Customize the amount of memory on the VM
+    vb.memory = "1024"
+
+    # Customize amount of video memory
+    vb.customize ["modifyvm", :id, "--vram", "128"]
+
+    # Disable 3D acceleration
+    vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
+  end
+end

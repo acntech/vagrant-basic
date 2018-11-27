@@ -1,11 +1,26 @@
-# AcnTech Xubuntu
-AcnTech Xubuntu box with Xubuntu Desktop 18.04.1 LTS 64-bit installed on a 100 GB disk.
+# AcnTech Basic
+AcnTech Basic box.
 
 Created with Vagrant 2.2.1 and VirtualBox 5.2.22.
 
-## Setup
+The box comes in two flavors, one based on Ubuntu and one based on Xubuntu.
+
+### AcnTech Ubuntu
+See details in folder [/ubuntu](/ubuntu).
+
+### AcnTech Xubuntu
+See details in folder [/xubuntu](/xubuntu).
+
+### Prerequisites
+The host computer must have _Intel VT/AMD-V_ virtualization support enabled in the BIOS.
+
+[Oracle VirtualBox](https://www.virtualbox.org) and [Vagrant](https://www.vagrantup.com) must also be installed on the host.
+
+### Setup
+This box was created using the following setup method:
+
 * Create host name (if not already created during OS install):
-  * ```acntech-xubuntu```
+  * ```acntech-ubuntu``` or ```acntech-xubuntu```
 * Create vagrant user (if not already created during OS install):
   * ```useradd -m -c "Vagrant" vagrant -s /bin/bash```
 * Add sudo access for the vagrant user:
