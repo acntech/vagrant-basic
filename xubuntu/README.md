@@ -1,5 +1,7 @@
 # AcnTech Xubuntu
-AcnTech Xubuntu box with Xubuntu Desktop 18.04.1 LTS 64-bit installed on a 100 GB disk.
+Latest AcnTech Xubuntu box is based on Xubuntu Desktop 19.10 64-bit installed on a 100 GB disk.
+
+Created with Vagrant 2.2.6 and VirtualBox 6.0.14.
 
 ### Usage
 See box on Vagrant Cloud: [acntech/xubuntu](https://app.vagrantup.com/acntech/boxes/xubuntu).
