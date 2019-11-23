@@ -61,4 +61,3 @@ This box was created using the following setup method:
   * `sudo rm -f /EMPTY`
 * Clear bash history:
   * `cat /dev/null > ~/.bash_history && history -c && exit`
-* Export with `vagrant package --base "AcnTech Ubuntu"`
