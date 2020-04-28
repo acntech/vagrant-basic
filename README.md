@@ -34,13 +34,13 @@ This box was created using the following setup method:
   * `echo "vagrant ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers`
 * Restart VirtualBox Machine
 * Install Puppet repo
-  * `sudo wget https://apt.puppetlabs.com/puppet-release-bionic.deb -O /tmp/puppet.deb`
+  * `sudo wget https://apt.puppetlabs.com/puppet-release-focal.deb -O /tmp/puppet.deb`
   * `sudo dpkg -i /tmp/puppet.deb`
   * `sudo rm /tmp/puppet.deb`
 * Install packages:
   * `sudo apt update`
   * `sudo apt -y upgrade`
-  * `sudo apt -y install build-essential dkms openssh-server curl vim puppet-agent`
+  * `sudo apt -y install build-essential dkms openssh-server curl vim puppet`
   * `sudo apt -y autoremove`
   * `sudo apt -y autoclean`
   * `sudo apt -y clean`
@@ -51,8 +51,8 @@ This box was created using the following setup method:
 * Allowed for use of the authorized keys file:
   * `sudo sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/g' /etc/ssh/sshd_config`
 * Disabled automatic updates:
-  * `sudo wget --no-check-certificate https://raw.githubusercontent.com/acntech/vagrant-xubuntu/develop/files/10periodic -O /etc/apt/apt.conf.d/10periodic`
-  * `sudo wget --no-check-certificate https://raw.githubusercontent.com/acntech/vagrant-xubuntu/develop/files/20auto-upgrades -O /etc/apt/apt.conf.d/20auto-upgrades`
+  * `sudo wget --no-check-certificate https://raw.githubusercontent.com/acntech/vagrant-basic/develop/files/10periodic -O /etc/apt/apt.conf.d/10periodic`
+  * `sudo wget --no-check-certificate https://raw.githubusercontent.com/acntech/vagrant-basic/develop/files/20auto-upgrades -O /etc/apt/apt.conf.d/20auto-upgrades`
 * Created vagrant folder:
   * `sudo mkdir /vagrant`
   * `sudo chown -R vagrant:vagrant /vagrant`
