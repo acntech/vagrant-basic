@@ -1,10 +1,7 @@
 # AcnTech Xubuntu
-AcnTech Xubuntu box based on Xubuntu Desktop 19.10 64-bit installed on a 100 GB disk.
+AcnTech Xubuntu box based on Xubuntu Desktop 21.10 64-bit installed on a 100 GB disk.
 
-Created with Vagrant 2.2.6 and VirtualBox 6.0.14.
-
-### Packcaging
-Package with `vagrant package --base "AcnTech Xubuntu"`
+Created with Vagrant 2.2.19 and VirtualBox 6.1.30.
 
 ### Usage
 See box on Vagrant Cloud: [acntech/xubuntu](https://app.vagrantup.com/acntech/boxes/xubuntu).
