@@ -19,7 +19,7 @@ This box was created using the following setup method:
 
 * Create new VirtualBox Machine
   * Choose name `AcnTech Ubuntu` or `AcnTech Xubuntu`
-  * Choose `2048 MB` RAM
+  * Choose `1024 MB` RAM
   * Choose `128 MB` Video Memory
   * Choose harddisk type `VMDK` and a `100 GB` size
 * Start install from Desktop Live CD
@@ -28,10 +28,17 @@ This box was created using the following setup method:
   * Username `vagrant`
   * Password `vagrant`
   * Hostname `acntech`
+* Ubuntu: Disable screensaver and lock screen
+  * > Settings > Privacy > Screen Lock > Disable screen lock
+  * > Settings > Power > Power Saving > Disable blank screen
+* Xubuntu: Disable screensaver and lock screen
+  * > Settings > Screensaver > Screensaver tab > Disable screensaver
+  * > Settings > Screensaver > Lock Screen tab > Disable lock screen
+  * > Settings > Power Management > Display tab > Disable display power management
 * Install required packages:
   * `sudo apt update`
   * `sudo apt -y upgrade`
-  * `sudo apt -y install build-essential dkms ssh openssh-server curl wget vim`
+  * `sudo apt -y install build-essential dkms ssh openssh-server curl wget vim net-tools apt-transport-https`
 * Installed VirtualBox Guest Additions:
   * > Machine > Devices > "Insert Guest Additions CD image..."
   * `sudo /media/cdrom/VBoxLinuxAdditions.run`

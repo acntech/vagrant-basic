@@ -34,7 +34,7 @@ Vagrant.configure("2") do |config|
     # Customize CPU count
     vb.cpus = "2"
     # Customize the amount of memory
-    vb.memory = "4096"
+    vb.memory = "2048"
   end
 end
 ```
