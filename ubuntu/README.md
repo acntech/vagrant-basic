@@ -1,17 +1,18 @@
 # AcnTech Ubuntu
-AcnTech Ubuntu box based on Ubuntu Desktop 21.10 64-bit installed on a 100 GB disk.
+AcnTech Ubuntu box based on Ubuntu Desktop 22.04.2 64-bit installed on a 100 GB disk.
 
-Created with Vagrant 2.2.19 and VirtualBox 6.1.30.
+Created with Vagrant 2.3.4 and VirtualBox 7.0.6.
 
 ### Usage
 See box on Vagrant Cloud: [acntech/ubuntu](https://app.vagrantup.com/acntech/boxes/ubuntu).
 
 See code on GitHub: [acntech/vagrant-basic](https://github.com/acntech/vagrant-basic).
 
-Create a ```Vagrantfile``` with the following content inside an empty folder:
+Create a `Vagrantfile` with the following content inside an empty folder:
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "acntech/ubuntu"
+  config.vm.box_version = "22.04.2"
 end
 ```
 
@@ -25,11 +26,12 @@ The box can be customized further by setting VM name, CPU count, memory size and
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "acntech/ubuntu"
+  config.vm.box_version = "22.04.2"
 
   config.vm.provider "virtualbox" do |vb|
     # Name to display in VirtualBox
     vb.name = "AcnTech Ubuntu Custom"
-    # Display the VirtualBox GUI when booting the machine
+    # Don't display the VirtualBox GUI when booting the machine
     vb.gui = false
     # Customize CPU count
     vb.cpus = "2"
@@ -45,6 +47,8 @@ The box is default setup to use `us` keyboard layout. To change this you can do 
 ```ruby
 Vagrant.configure("2") do |config|
   config.vm.box = "acntech/ubuntu"
+  config.vm.box_version = "22.04.2"
+
   config.vm.provision "shell", inline: "DEBIAN_FRONTEND=noninteractive localectl set-keymap <keymap>"
   config.vm.provision "shell", inline: "DEBIAN_FRONTEND=noninteractive localectl set-x11-keymap <keymap>"
 end

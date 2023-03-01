@@ -1,7 +1,7 @@
 # AcnTech Basic
 AcnTech Basic box.
 
-The box comes in two flavors, one based on Ubuntu and one based on Xubuntu.
+The box comes in two flavors, one based on Ubuntu Desktop and one based on Xubuntu Desktop.
 
 ### AcnTech Ubuntu
 See details in folder [/ubuntu](/ubuntu).
@@ -22,7 +22,7 @@ This box was created using the following setup method:
   * Choose `1024 MB` RAM
   * Choose `128 MB` Video Memory
   * Choose harddisk type `VMDK` and a `100 GB` size
-* Start install from Desktop Live CD
+* Start install from Live CD
   * Choose `Minimal installation`
   * User `Vagrant`
   * Username `vagrant`
@@ -38,25 +38,22 @@ This box was created using the following setup method:
 * Install required packages:
   * `sudo apt update`
   * `sudo apt -y upgrade`
-  * `sudo apt -y install build-essential dkms ssh openssh-server curl wget vim net-tools apt-transport-https`
+  * `sudo apt -y install build-essential dkms ssh openssh-server curl wget vim net-tools`
 * Installed VirtualBox Guest Additions:
   * > Machine > Devices > "Insert Guest Additions CD image..."
   * `sudo /media/cdrom/VBoxLinuxAdditions.run`
 * Restart VirtualBox Machine
 * Install Puppet repo
-  * `sudo wget https://apt.puppetlabs.com/puppet-release-focal.deb -O /tmp/puppet.deb`
+  * `sudo curl -o /tmp/puppet.deb https://apt.puppetlabs.com/puppet7-release-jammy.deb`
   * `sudo dpkg -i /tmp/puppet.deb`
   * `sudo rm /tmp/puppet.deb`
   * `sudo apt update`
   * `sudo apt -y install puppet`
 * Added Vagrant insecure public SSH key to the vagrant user:
   * `mkdir ~/.ssh`
-  * `wget --no-check-certificate https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub -O ~/.ssh/authorized_keys`
+  * `curl -k -o ~/.ssh/authorized_keys https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub`
 * Allowed for use of the authorized keys file:
   * `sudo sed -i 's/#AuthorizedKeysFile/AuthorizedKeysFile/g' /etc/ssh/sshd_config`
-* Disabled automatic updates:
-  * `sudo wget --no-check-certificate https://raw.githubusercontent.com/acntech/vagrant-basic/develop/provision/system/files/10periodic -O /etc/apt/apt.conf.d/10periodic`
-  * `sudo wget --no-check-certificate https://raw.githubusercontent.com/acntech/vagrant-basic/develop/provision/system/files/20auto-upgrades -O /etc/apt/apt.conf.d/20auto-upgrades`
 * Add sudo access for the vagrant user:
   * `echo "vagrant ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers`
 * Created vagrant folder:
